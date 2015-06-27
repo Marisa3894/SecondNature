@@ -1,0 +1,68 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" ng-app="SNApp">
+<head>
+    <title>Second Nature</title>
+    <base href="/" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+
+<body ng-controller="ProductListController as main">
+
+    <div class="container">
+
+        <div ng-view class="view"></div>
+
+        @*<h2>Products</h2>
+        
+        <table ng-cloak="true" class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Fabric
+                    </th>
+                    <th>
+                        Filling
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in main.products">
+                    <td><img ng-src="{{product.Image}}" /></td>
+                    <td>{{product.Name}}</td>
+                    <td>{{product.Description}}</td>
+                    <td>{{product.Fabric}}</td>
+                    <td>{{product.Filling}}</td>
+                    <td>{{product.Price|currency}}</td>
+
+                </tr>
+
+            </tbody>
+
+        </table>*@
+
+    </div>
+
+
+
+    @*<ng-view></ng-view>*@
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-resource.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="~/ngApps/app.js"></script>
+    <script src="~/ngApps/controllers.js"></script>
+</body>
+</html>

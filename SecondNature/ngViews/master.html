@@ -1,0 +1,14 @@
+﻿Search: <input ng-model="main.search" />
+
+<ul>
+    <li ng-repeat="product in main.products">
+        <a href="/details/{{product.id}}">{{product.name}}</a>
+        <br /> price: {{product.price|currency}}
+    </li>
+</ul>
+
+
+<form ng-submit="main.add()">
+    Name: <input ng-model="main.newProduct.name" />
+    <input type="submit" value="add" />
+</form>
