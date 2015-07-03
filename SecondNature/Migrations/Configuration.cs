@@ -28,13 +28,11 @@ namespace SecondNature.Migrations
 
             var userStore = new UserStore<ApplicationUser>(context);
             var userManager = new ApplicationUserManager(userStore);
-            var roleStore = new RoleStore<IdentityRole>(context);
-            var roleManager = new RoleManager<IdentityRole>(roleStore);
 
             if (userManager.FindByName(user.UserName) == null)
             {
                 userManager.Create(user, "Secret123!");
-                userManager.AddClaim(user.Id, new Claim("CanEditProducts", "true"));
+                userManager.AddClaim(user.Id, new Claim("Admin", "true"));
             }
 
             var products = new Product[] {

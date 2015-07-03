@@ -1,5 +1,5 @@
 ﻿<h2>Delete this product?</h2>
-<form ng-submit="main.remove()">
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -33,15 +33,15 @@
                             </tr>
                         </table>
                         <div>
-                            <input type="submit" class="btn btn-primary" onclick="window.location.replace('/list')" value="NO / Cancel" />
-                            <input type="submit" class="btn btn-info" value="YES / Delete" />
+                            <a href="/list" class="btn btn-primary">NO / Cancel</a>
+                            <input ng-click="main.remove()" type="button" class="btn btn-info" value="YES / Delete" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</form>
+
 
 
 

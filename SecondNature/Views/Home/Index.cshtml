@@ -2,152 +2,143 @@
 <head>
     <title>Second Nature</title>
     <base href="/" />
-    
-    @*Bootstrap*@
+
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/ui-bootstrap-csp.css" rel="stylesheet" />
-    
-    @*Google Web Fonts*@
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
-
-    @*CSS*@
     <link href="~/Content/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/ceruleanStyle.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
 
 </head>
 <body ng-controller="MasterController as main">
-    
+
     <div class="SNBanner">
-        <text>Second Nature Pillow Co</text>
-        
     </div>
-        
-    @*Navigation bar*@
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="~/">Home</a>
-                </div>
 
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="~/list">Product List <span class="sr-only">(current)</span></a></li>
-                        <li ng-if="menu.showLogin()"><a href="~/add">Add Product<span class="sr-only">(current)</span></a></li>
-
-
-                        @*<li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">One more separated link</a></li>
-                                </ul>
-                            </li>*@
-                    </ul>
-
-                    @*Search function*@
-                    @*<form class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>*@
-
-                    @*Login Links*@
-                    <ul ng-controller="MenuController as menu" class="nav navbar-nav navbar-right">
-                        <li ng-if="!menu.showLogin()"><a href="~/register">Register</a></li>
-                        <li ng-if="!menu.showLogin()"><a href="~/login">Log in</a></li>
-                        <li ng-if="menu.showLogin()"><a ng-click="menu.logout()">Log out</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-
-       <!-- Partial Views Inserted Here -->
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-inverse">
         <div class="container-fluid">
-            <div ng-view class="view"></div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="~/">Home</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="~/list">Product List <span class="sr-only">(current)</span></a></li>
+                    <li><a href="~/add">Add Product<span class="sr-only">(current)</span></a></li>
+
+
+                    @*<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>*@
+                </ul>
+
+                @*Search function*@
+                @*<form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>*@
+
+                <!-- Login links -->
+                <ul ng-controller="MenuController as menu" class="nav navbar-nav navbar-right">
+                    <li ng-if="!menu.showLogin()"><a href="~/register">Register</a></li>
+                    <li ng-if="!menu.showLogin()"><a href="~/login">Log in</a></li>
+                    <li ng-if="menu.showLogin()"><a ng-click="menu.logout()">Log out</a></li>
+                </ul>
+            </div>
         </div>
+    </nav>
+
+    <!-- Partial Views Inserted Here -->
+    <div class="container-fluid">
+        <div ng-view class="view"></div>
+    </div>
 
 
-<!-- DivSpacer -->
+    <!-- Vertical Spacer -->
     <div class="mjr-divSpacer"></div>
 
 
-<!-- Footer Section -->
-<footer>
-    <div class="mjr-footer-section">
-        <div class="container">
-            <div class="col-md-3 col-sm-6">
-                <h4>Information</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>                 
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms &amp; Conditions</a></li>
-                </ul>
-            </div>
+    <!-- Footer Section -->
+    <footer>
+        <div class="mjr-footer-section">
+            <div class="container">
+                <div class="col-md-3 col-sm-6">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
 
-            <div class="col-md-3 col-sm-6">
-                <h4>My Account</h4>
-                <ul>
-                    <li><a href="#">My Orders</a></li>
-                    <li><a href="#">My Wishlist</a></li>
-                    <li><a href="#">My Profile</a></li>
-                </ul>
-            </div>
+                <div class="col-md-3 col-sm-6">
+                    <h4>My Account</h4>
+                    <ul>
+                        <li><a href="#">My Orders</a></li>
+                        <li><a href="#">My Wishlist</a></li>
+                        <li><a href="#">My Profile</a></li>
+                    </ul>
+                </div>
 
-            <div class="col-md-3 col-sm-6">
-                <h4>Service</h4>
-                <ul>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Site Map</a></li>
-                    <li><a href="#">Authorized Resellers</a></li>
-                </ul>
-            </div>
+                <div class="col-md-3 col-sm-6">
+                    <h4>Service</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Site Map</a></li>
+                        <li><a href="#">Authorized Resellers</a></li>
+                    </ul>
+                </div>
 
-            <div class="col-md-3 col-sm-12 last">
-                <h4>Contact Us</h4>
-                <address>
-                    <span style="font-family: Buxton Sketch; font-size: larger">Second Nature Pillow Co</span><br />
-                    Dallas, Texas<br /> 
-                    214.567.9842<br />
-                    <a href="#">info@secondnaturepillow.com</a>
-                </address>
+                <div class="col-md-3 col-sm-12 last">
+                    <h4>Contact Us</h4>
+                    <address>
+                        <span style="font-family: Buxton Sketch; font-size: x-large">Second Nature Pillow Co</span><br />
+                        Dallas, Texas<br />
+                        214.567.9842 <br />
+                        <a href="#">info@secondnaturepillow.com</a>
+                    </address>
+                </div>
             </div>
         </div>
-    </div>
+    </footer>
+    <!-- End Footer Section -->
 
     <!-- Copyright Section -->
-    <div class="mjr-copyright-section">
-        <div class="container">
-            <p>&copy; 2015 Second Nature Pillow Co. &nbsp; Design by Marisa Reilly</p>
-        </div>
+    <div id="mjr-copyright-section">
+        &copy; 2015 Second Nature Pillow Co. &nbsp; Design by Marisa Reilly
     </div>
-</footer>
-<!-- End Footer Section -->
 
 
-        <script src="~/Scripts/angular.min.js"></script>
-        <script src="~/Scripts/angular-route.min.js"></script>
-        <script src="~/Scripts/angular-resource.min.js"></script>
-        <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
-        <script src="~/ngApps/app.js"></script>
-        <script src="~/ngApps/controllers.js"></script> 
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-resource.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="~/ngApps/app.js"></script>
+    <script src="~/ngApps/controllers.js"></script>
 
 
 </body>

@@ -6,7 +6,7 @@
         var Product = $resource(PROD_API);
         self.products = Product.query();
 
-        self.myInterval = 5000;
+        self.myInterval = 3000;
         self.slides = [{ image: 'http://placekitten.com/603/300'}, { image: 'http://placekitten.com/602/300'}, { image: 'http://placekitten.com/602/300'}];
 
     });
@@ -15,8 +15,21 @@
         var self = this;
 
         var Product = $resource(PROD_API);
-
         self.products = Product.query();
+
+        self.reveal = false;
+
+        // query products list
+        var Product = $resource(PROD_API);
+        Product.query().$promise.then(function (data) {
+            // on success; / back from the server
+            self.reveal = true;
+            self.products = data;
+        },
+        function () {
+            // on error
+            console.log("error");
+        });
 
     });
 
@@ -30,15 +43,13 @@
                 $location.path('/list');
             });
         }
-
     });
 
-    angular.module('SNApp').controller('DetailsController', function (PROD_API, $resource, $routeParams) {
+    angular.module('SNApp').controller('DetailsController', function (PROD_API, $resource, $routeParams, $location) {
         var self = this;
 
         var Product = $resource(PROD_API);
         self.product = Product.get({ id: $routeParams.id });
-
     });
 
     angular.module('SNApp').controller('EditController', function (PROD_API, $resource, $routeParams, $location) {
@@ -52,7 +63,6 @@
                 $location.path('/list');
             });
         }
-
     });
 
     angular.module('SNApp').controller('DeleteController', function (PROD_API, $resource, $routeParams, $location) {
@@ -67,6 +77,10 @@
                 //alert(['Product deletion failed.'])
             });
         }
+
+        self.redirect = function () {
+            $location.path('/list');
+        }
     });
 
     angular.module('SNApp').controller('LoginController', function ($location, $http) {
@@ -80,6 +94,10 @@
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
             }).success(function (result) {
                 sessionStorage.setItem('userToken', result.access_token);
+                $http.defaults.headers.common['Authorization'] = 'bearer ' + result.access_token;
+                $http.get('/api/account/getisadmin').success(function (isAdmin) {
+                    debugger;
+                })
                 $location.path('/');
             });
         }
@@ -97,61 +115,6 @@
             $location.path('/');
         };
 
-    });
-
-    //Modal - https://angular-ui.github.io/bootstrap/
-    angular.module('SNApp').controller('ModalController', function ($modal, $log) {
-        var self = this;
-
-        self.items = ['item1', 'item2', 'item3'];
-
-        self.animationsEnabled = true;
-
-        self.open = function (size) {
-
-            var modalInstance = $modal.open({
-                animation: self.animationsEnabled,
-                templateUrl: 'modal.html',
-                controller: 'ModalInstanceCtrl',
-                size: size,
-                resolve: {
-                    items: function () {
-                        return self.items;
-                    }
-                }
-            });
-
-            modalInstance.result.then(function (selectedItem) {
-                self.selected = selectedItem;
-            }, function () {
-                $log.info('Modal dismissed at: ' + new Date());
-            });
-        };
-
-        self.toggleAnimation = function () {
-            self.animationsEnabled = !self.animationsEnabled;
-        };
-
-    });
-
-    // Please note that $modalInstance represents a modal window (instance) dependency.
-    // It is not the same as the $modal service used above.
-
-    angular.module('SNApp').controller('ModalInstanceCtrl', function ($modalInstance, items) {
-        var self = this;
-
-        self.items = items;
-        self.selected = {
-            item: self.items[0]
-        };
-
-        self.ok = function () {
-            $modalInstance.close(self.selected.item);
-        };
-
-        self.cancel = function () {
-            $modalInstance.dismiss('cancel');
-        };
     });
 
 })();

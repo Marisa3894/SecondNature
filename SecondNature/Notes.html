@@ -1,0 +1,13 @@
+﻿self.reveal = false;
+
+        // query products list
+        var Product = $resource(PROD_API);
+        Product.query().$promise.then(function (data) {
+            // on success; / back from the server
+            self.reveal = true;
+            self.products = data;
+        },
+        function () {
+            // on error
+            console.log("error");
+        });

@@ -18,6 +18,33 @@
                 controllerAs: 'main'
             })
 
+            .when('/zabouton', {
+                templateUrl: '/ngViews/zabouton.html',
+                controller: 'MasterController',
+                controllerAs: 'main'
+            })
+
+            .when('/fabric', {
+                templateUrl: '/ngViews/fabric.html',
+                controller: 'MasterController',
+                controllerAs: 'main'
+            })
+
+            .when('/neckroll', {
+                templateUrl: '/ngViews/neckroll.html',
+                controller: 'MasterController',
+                controllerAs: 'main'
+            })
+
+            .when('/zafu', {
+                templateUrl: '/ngViews/zafu.html',
+                controller: 'MasterController',
+                controllerAs: 'main'
+            })
+
+
+
+
         // product CRUD pages
             .when('/list', {
                 templateUrl: '/ngViews/list.html',
@@ -62,6 +89,7 @@
                 controllerAs: 'main'
             })
 
+            // modal
             .when('/modal', {
                 templateUrl: '/ngViews/modal.html',
                 controller: 'ModalController',

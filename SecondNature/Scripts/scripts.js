@@ -1,1 +1,5 @@
-// Empty JS for your own code to be here
+$('.mybtn').on('click', function (event) {
+    event.preventDefault();
+    var url = $(this).data('target');
+    location.replace(url);
+});
