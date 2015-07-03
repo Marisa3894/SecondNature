@@ -3,7 +3,7 @@ namespace SecondNature.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class productSeedData : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -49,6 +49,8 @@ namespace SecondNature.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        FirstName = c.String(),
+                        LastName = c.String(),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),

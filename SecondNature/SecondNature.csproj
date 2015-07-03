@@ -203,9 +203,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506251919508_productSeedData.cs" />
-    <Compile Include="Migrations\201506251919508_productSeedData.Designer.cs">
-      <DependentUpon>201506251919508_productSeedData.cs</DependentUpon>
+    <Compile Include="Migrations\201506301954412_initial.cs" />
+    <Compile Include="Migrations\201506301954412_initial.Designer.cs">
+      <DependentUpon>201506301954412_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -221,14 +221,39 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ceruleanStyle.css" />
+    <Content Include="Content\font-awesome-4.3.0\css\font-awesome.css" />
+    <Content Include="Content\font-awesome-4.3.0\css\font-awesome.min.css" />
+    <Content Include="Content\font-awesome-4.3.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\font-awesome-4.3.0\HELP-US-OUT.txt" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\background.jpg" />
+    <Content Include="img\carouseltest.png" />
+    <Content Include="img\FabricThumb.png" />
+    <Content Include="img\MeditationColor.png" />
+    <Content Include="img\NeckrollThumb.png" />
+    <Content Include="img\TriangleSpinner.gif" />
+    <Content Include="img\SNBanner.png" />
+    <Content Include="img\ZabThumb.png" />
     <Content Include="ngApps\app.js" />
     <Content Include="ngApps\controllers.js" />
+    <Content Include="ngApps\services.js" />
+    <Content Include="ngViews\add.html" />
+    <Content Include="ngViews\delete.html" />
     <Content Include="ngViews\details.html" />
+    <Content Include="ngViews\edit.html" />
+    <Content Include="ngViews\fabric.html" />
+    <Content Include="ngViews\list.html" />
+    <Content Include="ngViews\login.html" />
     <Content Include="ngViews\master.html" />
+    <Content Include="ngViews\neckroll.html" />
+    <Content Include="ngViews\register.html" />
+    <Content Include="ngViews\zabouton.html" />
+    <Content Include="ngViews\zafu.html" />
+    <Content Include="Notes.html" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-resource.js" />
     <Content Include="Scripts\angular-resource.min.js" />
@@ -264,6 +289,38 @@
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
     <Content Include="Scripts\angular-resource.min.js.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\font-awesome-4.3.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\font-awesome-4.3.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\font-awesome-4.3.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\font-awesome-4.3.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\font-awesome-4.3.0\fonts\FontAwesome.otf" />
+    <Content Include="Content\font-awesome-4.3.0\less\animated.less" />
+    <Content Include="Content\font-awesome-4.3.0\less\bordered-pulled.less" />
+    <Content Include="Content\font-awesome-4.3.0\less\core.less" />
+    <Content Include="Content\font-awesome-4.3.0\less\fixed-width.less" />
+    <Content Include="Content\font-awesome-4.3.0\less\font-awesome.less" />
+    <Content Include="Content\font-awesome-4.3.0\less\icons.less" />
+    <Content Include="Content\font-awesome-4.3.0\less\larger.less" />
+    <Content Include="Content\font-awesome-4.3.0\less\list.less" />
+    <Content Include="Content\font-awesome-4.3.0\less\mixins.less" />
+    <Content Include="Content\font-awesome-4.3.0\less\path.less" />
+    <Content Include="Content\font-awesome-4.3.0\less\rotated-flipped.less" />
+    <Content Include="Content\font-awesome-4.3.0\less\stacked.less" />
+    <Content Include="Content\font-awesome-4.3.0\less\variables.less" />
+    <Content Include="Content\font-awesome-4.3.0\scss\font-awesome.scss" />
+    <Content Include="Content\font-awesome-4.3.0\scss\_animated.scss" />
+    <Content Include="Content\font-awesome-4.3.0\scss\_bordered-pulled.scss" />
+    <Content Include="Content\font-awesome-4.3.0\scss\_core.scss" />
+    <Content Include="Content\font-awesome-4.3.0\scss\_fixed-width.scss" />
+    <Content Include="Content\font-awesome-4.3.0\scss\_icons.scss" />
+    <Content Include="Content\font-awesome-4.3.0\scss\_larger.scss" />
+    <Content Include="Content\font-awesome-4.3.0\scss\_list.scss" />
+    <Content Include="Content\font-awesome-4.3.0\scss\_mixins.scss" />
+    <Content Include="Content\font-awesome-4.3.0\scss\_path.scss" />
+    <Content Include="Content\font-awesome-4.3.0\scss\_rotated-flipped.scss" />
+    <Content Include="Content\font-awesome-4.3.0\scss\_stacked.scss" />
+    <Content Include="Content\font-awesome-4.3.0\scss\_variables.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -275,6 +332,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\scripts.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -294,7 +352,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -304,8 +361,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506251919508_productSeedData.resx">
-      <DependentUpon>201506251919508_productSeedData.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506301954412_initial.resx">
+      <DependentUpon>201506301954412_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

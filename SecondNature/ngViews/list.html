@@ -1,0 +1,47 @@
+﻿
+<h2>Product List</h2>
+
+<form class="form-horizontal" role="form">
+    <div class="form-group">
+        <label class="col-sm-1 control-label">
+            Filter:
+        </label>
+        <div class="col-sm-11">
+            <input type="text" class=" form-control" ng-model="productFilter" />
+        </div>
+    </div>
+
+</form>
+
+<table ng-cloak="true" class="table table-responsive" ng-show="main.reveal">
+    <thead>
+        <tr>
+            <th></th>
+            <th ng-click="sortBy='name'; reverse=!reverse">Name</th>
+            <th ng-click="sortBy='fabric'; reverse=!reverse">Fabric</th>
+            <th ng-click="sortBy='filling'; reverse=!reverse">Filling</th>
+            <th ng-click="sortBy='price'; reverse=!reverse">Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="product in main.products | filter:productFilter | orderBy:sortBy:reverse">
+            <td><img ng-src="{{product.image}}" /></td>
+            <td>{{product.name}}</td>
+            <td>{{product.fabric}}</td>
+            <td>{{product.filling}}</td>
+            <td>{{product.price|currency}}</td>
+            <td>
+                <a href="/details/{{product.id}}">Details | </a>
+                <a href="/edit/{{product.id}}">Edit | </a>
+                <a href="/delete/{{product.id}}">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div ng-show="!main.reveal">
+    <img class="mjr-loader" src="../img/TriangleSpinner.gif" />
+</div>
+
+

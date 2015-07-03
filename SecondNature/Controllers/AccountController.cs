@@ -16,6 +16,8 @@ using Microsoft.Owin.Security.OAuth;
 using SecondNature.Models;
 using SecondNature.Providers;
 using SecondNature.Results;
+using System.Linq;
+using System.Collections;
 
 namespace SecondNature.Controllers
 {
@@ -328,7 +330,7 @@ namespace SecondNature.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 
@@ -382,6 +384,14 @@ namespace SecondNature.Controllers
             }
 
             base.Dispose(disposing);
+        }
+
+        //GET claims 
+        [Route("GetIsAdmin")]
+        public bool GetIsAdmin ()
+        {
+            var user = this.User.Identity as ClaimsIdentity;
+            return user.HasClaim("Admin", "true");
         }
 
         #region Helpers

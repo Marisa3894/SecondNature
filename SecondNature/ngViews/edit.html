@@ -1,0 +1,72 @@
+﻿<h2>Edit Product</h2>
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <form ng-submit="main.edit()" class="form-horizontal">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Image Url:</label>
+                        <div class="col-lg-9">
+                            <input ng-model="main.product.image" type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Name:</label>
+                        <div class="col-lg-9">
+                            <input ng-model="main.product.name" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Fabric:</label>
+                        <div class="col-lg-9">
+                            <input ng-model="main.product.fabric" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Filling</label>
+                        <div class="col-lg-9">
+                            <select class="form-control" id="select">
+                                <option>{{main.product.filling}}</option>
+                                <option>buckwheat hulls</option>
+                                <option>cotton batting</option>
+                                <option>kapok</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Price:</label>
+                        <div class="col-lg-9">
+                            <input ng-model="main.product.price" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Description</label>
+                        <div class="col-lg-9">
+                            <textarea ng-model="main.product.description" class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <a href="/list" class="btn btn-primary">Cancel</a>
+                            <input type="submit" class="btn btn-info" value="Save Edits" />
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+
+        <!--Edit preview-->
+        <div class="row">
+            <div class="col-md-6">
+                <image ng-src="{{main.product.image}}" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
