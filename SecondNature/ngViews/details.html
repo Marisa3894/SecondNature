@@ -1,8 +1,49 @@
-﻿<h4>Product Details</h4>
-<hr />
-<p>{{main.product.image}}</p>
-<p>{{main.product.name}}</p>
-<p>{{main.product.price|currency}}</p>
-<p>{{main.product.filling}}</p>
-<p>{{main.product.fabric}}</p>
-<hr />
+﻿
+<h2>Product Details</h2>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-3">
+                    <br />
+                    <image ng-src="{{main.product.image}}" />
+                </div>
+                <div class="col-md-9">
+                    
+                    <table ng-cloak="true" class="table table-responsive">
+                        <tr>
+                            <th>Name:</th>
+                            <td>{{main.product.name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Filling:</th>
+                            <td>{{main.product.filling}}</td>
+                        </tr>
+                        <tr>
+                            <th>Fabric:</th>
+                            <td>{{main.product.fabric}}</td>
+                        </tr>
+                        <tr>
+                            <th>Price:</th>
+                            <td>{{main.product.price|currency}}</td>
+                        </tr>
+                        <tr>
+                            <th>Description:</th>
+                            <td>{{main.product.description}}</td>
+                        </tr>
+                    </table>
+                    <div>
+                        <input type="submit" class="btn btn-primary" onclick="window.location.replace('/list')" value="Return to Product List" />
+                    </div>
+                </div>               
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

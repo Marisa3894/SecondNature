@@ -1,0 +1,28 @@
+﻿
+<h2>Product List</h2>
+        <table ng-cloak="true" class="table table-responsive">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Fabric</th>
+                    <th>Filling</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in main.products">
+                    <td><img ng-src="{{product.image}}" /></td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.fabric}}</td>
+                    <td>{{product.filling}}</td>
+                    <td>{{product.price|currency}}</td>
+                    <td>
+                        <a href="/details/{{product.id}}">Details | </a>
+                        <a href="/edit/{{product.id}}">Edit | </a>
+                        <a href="/delete/{{product.id}}">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>

@@ -22,32 +22,39 @@ namespace SecondNature.API
             return _db.Products.Find(id);
         }
 
+        public HttpResponseMessage PostProducts(Product product)
+        {
 
-        //GET: api/SN
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
+            if (ModelState.IsValid)
+            {
+                if (product.Id == 0)
+                {
+                    _db.Products.Add(product);
+                    _db.SaveChanges();
+                }
+                else
+                {
+                    var original = _db.Products.Find(product.Id);
+                    original.Image = product.Image;
+                    original.Name = product.Name;
+                    original.Filling = product.Filling;
+                    original.Fabric = product.Fabric;
+                    original.Price = product.Price;
+                    original.Description = product.Description;
+                    _db.SaveChanges();
+                }
 
-        //// GET: api/SN/5
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+                return Request.CreateResponse(HttpStatusCode.Created, product);
+            }
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, this.ModelState);
+        }
 
-        //// POST: api/SN
-        //public void Post([FromBody]string value)
-        //{
-        //}
-
-        //// PUT: api/SN/5
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
-
-        //// DELETE: api/SN/5
-        //public void Delete(int id)
-        //{
-        //}
+        
+        public void Delete(int id)
+        {
+            var original = _db.Products.Find(id);
+            _db.Products.Remove(original);
+            _db.SaveChanges();
+        }
     }
 }

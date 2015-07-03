@@ -1,14 +1,124 @@
-﻿Search: <input ng-model="main.search" />
+﻿
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <div ng-controller="MasterController as main">
+                <!--<p>
+                    <button class="btn btn-default btn-sm" ng-click="status.open = !status.open">Toggle last panel</button>
+                    <button class="btn btn-default btn-sm" ng-click="status.isFirstDisabled = ! status.isFirstDisabled">Enable / Disable first panel</button>
+                </p>
 
-<ul>
-    <li ng-repeat="product in main.products">
-        <a href="/details/{{product.id}}">{{product.name}}</a>
-        <br /> price: {{product.price|currency}}
-    </li>
-</ul>
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="oneAtATime">
+                    Open only one at a time
+                </label>-->
 
+                <accordion close-others="oneAtATime">
+                    
+                    <!--Static content-->
+                    <accordion-group heading="Static Header" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+                        Static Content coded in.
+                    </accordion-group>
+                    
+                    
+                    <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+                        {{group.content}}
+                    </accordion-group>
+                    
+                    <!--Dynamic Content-->
+                    <accordion-group heading="Dynamic Body Content">
+                        <p><a href="#">One</a></p>
+                        <p><a href="#">Two</a></p>
+                        <p><a href="#">Three</a></p>
+                        <button class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+                        <div ng-repeat="item in items">{{item}}</div>
+                    </accordion-group>
+                    
+                    <!--Chevron-->
+                    <accordion-group is-open="status.open">
+                        <accordion-heading>
+                            AnimatedChevron <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                        </accordion-heading>
+                        This is just some content to illustrate fancy headings.
+                    </accordion-group>
+                
+                </accordion>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div>
+                <!--Carousel-->
+                <carousel interval="main.myInterval">
+                    <slide ng-repeat="slide in main.slides" active="slide.active">
+                        <img ng-src="{{slide.image}}" style="margin:auto;">
+                        <!--<div class="carousel-caption">
+            <p>{{slide.text}}</p>
+        </div>-->
+                        
+                    </slide>
+                </carousel> <br />
 
-<form ng-submit="main.add()">
-    Name: <input ng-model="main.newProduct.name" />
-    <input type="submit" value="add" />
-</form>
+                <!--<div class="row">-->
+                    <!--Add slide button 
+                        div class="col-md-2">
+                        <input type="submit" class="btn" ng-click="addSlide()" value="Add Slide">
+                    </div>-->
+                    
+                    <!--Input Interval-->
+                    <!--<div class="col-md-10">
+                        Set interval: <input type="number" ng-model="myInterval"> (Enter milliseconds; a negative number or 0 stop the interval.)
+                    </div>-->
+                <!--</div>-->
+
+                <!--Thumbnails-->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
+                            <div class="caption">
+                                <h3>Meditation Pillows</h3>
+                                <p>
+                                    Our Zafu, Zabouton and Mini-Zab meditation pillows are carefully crafted, using beautiful hemp and hemp blend fabrics and cotton or buckwheat hull fillings to embody the benefits of natural, organic and locally grown materials.                          
+                                </p>
+                                <br /><br />
+                                <p>
+                                    <a class="btn btn-primary" href="#">Mediation Pillows</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <img alt="Bootstrap Thumbnail Second" src="http://lorempixel.com/output/city-q-c-600-200-1.jpg" />
+                            <div class="caption">
+                                <h3>Natural Fabrics</h3>
+                                <p>
+                                    Uniquely beautiful covers are created from organically grown hemp, flax, silk, cotton in a variety of combinations. All fabrics are woven and dyed in the US, and contribute to the support and development of local farming, weaving and manufacturing communities.
+                                </p><br />
+                                <p>
+                                    <a class="btn btn-primary" href="#">Natural Fabrics</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <img alt="Bootstrap Thumbnail Third" src="http://lorempixel.com/output/sports-q-c-600-200-1.jpg" />
+                            <div class="caption">
+                                <h3>Neck Rolls & Pillows</h3>
+                                <p>
+                                    The buckwheat hull Neck Roll and Neck Pillows are designed to support the neck and provide relief for neck, back pain, and even snoring. The preflattened buckwheat hull filling maintains its volume and does not compress during the night.
+                                </p><br />
+                                <p>
+                                    <a class="btn btn-primary" href="#">Neck Rolls & Pillows</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End carousel/thumbnail section-->
+            </div>
+        </div>
+    </div>
+</div>
+

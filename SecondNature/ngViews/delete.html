@@ -1,0 +1,57 @@
+﻿<h2>Delete this product?</h2>
+<form ng-submit="main.remove()">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3">
+                        <br />
+                        <image ng-src="{{main.product.image}}" />
+                    </div>
+                    <div class="col-md-9">
+
+                        <table ng-cloak="true" class="table table-responsive">
+                            <tr>
+                                <th>Name:</th>
+                                <td>{{main.product.name}}</td>
+                            </tr>
+                            <tr>
+                                <th>Filling:</th>
+                                <td>{{main.product.filling}}</td>
+                            </tr>
+                            <tr>
+                                <th>Fabric:</th>
+                                <td>{{main.product.fabric}}</td>
+                            </tr>
+                            <tr>
+                                <th>Price:</th>
+                                <td>{{main.product.price|currency}}</td>
+                            </tr>
+                            <tr>
+                                <th>Description:</th>
+                                <td>{{main.product.description}}</td>
+                            </tr>
+                        </table>
+                        <div>
+                            <input type="submit" class="btn btn-primary" onclick="window.location.replace('/list')" value="NO / Cancel" />
+                            <input type="submit" class="btn btn-info" value="YES / Delete" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
