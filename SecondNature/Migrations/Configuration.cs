@@ -2,12 +2,10 @@ namespace SecondNature.Migrations
 {
     using Microsoft.AspNet.Identity.EntityFramework;
     using SecondNature.Models;
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
     using Microsoft.AspNet.Identity;
     using System.Security.Claims;
+    using System;
 
     internal sealed class Configuration : DbMigrationsConfiguration<SecondNature.Models.ApplicationDbContext>
     {
@@ -42,6 +40,12 @@ namespace SecondNature.Migrations
                 new Product {Image="http://www.secondnaturepillow.com/images/albums/NewAlbum_28ac1/tn_480_3pil3.jpg.jpg", Name="Neck Pillow", Price=29.00m, Filling="buckwheat", Fabric="solid", Description="Product description..."}
         };
             context.Products.AddOrUpdate(p => new { p.Image, p.Name, p.Filling, p.Fabric, p.Price, p.Description }, products);
+
+            var productsToo = new ProductToo[] {
+                new ProductToo {Intake=DateTime.Now, Name="Test"}
+            };
+
+            context.ProductsToo.AddOrUpdate(t => new { t.Intake, t.Name }, productsToo);
         }
     }
 }

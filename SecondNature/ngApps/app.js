@@ -1,7 +1,8 @@
 ﻿(function () {
 
-    angular.module('SNApp', ['ngResource', 'ngRoute', 'ui.bootstrap'])
+    angular.module('SNApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ngAnimate'])
         .constant('PROD_API', '/api/products/:id')
+        .constant('PRODT_API', '/api/productstoo/:id')
         .config(function ($routeProvider, $locationProvider) {
 
         $routeProvider
@@ -86,14 +87,14 @@
             .when('/register', {
                 templateUrl: '/ngViews/register.html',
                 controller: 'RegisterController',
-                controllerAs: 'main'
+                controllerAs: 'rc'
             })
 
-            // modal
-            .when('/modal', {
-                templateUrl: '/ngViews/modal.html',
-                controller: 'ModalController',
-                controllerAs: 'main'
+            // test
+            .when('/test', {
+                templateUrl: '/ngViews/test.html',
+                controller: 'TestController',
+                controllerAs: 'tc'
             })
 
         .otherwise({ redirectTo: '/' });

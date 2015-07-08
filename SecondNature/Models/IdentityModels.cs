@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using System.Data.Entity;
+using SecondNature.Migrations;
 
 namespace SecondNature.Models
 {
@@ -27,10 +28,13 @@ namespace SecondNature.Models
     {
         public IDbSet<Product> Products { get; set; }
 
+        public IDbSet<ProductToo> ProductsToo { get; set; }
+
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
         }
         
         public static ApplicationDbContext Create()

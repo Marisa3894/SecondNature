@@ -1,0 +1,10 @@
+﻿Register
+
+Modals:  
+	Delete item
+	Login
+
+Admin:
+	User list/CRUD 
+
+Footer popup
