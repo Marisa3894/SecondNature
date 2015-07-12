@@ -65,7 +65,7 @@
     });
 
     //MENU CONTROLLER FOR NAV BAR
-    angular.module('SNApp').controller('MenuController', function ($location, $http) {
+    angular.module('SNApp').controller('MenuController', function ($location, $http, $log) {
         var self = this;
 
         self.showLogin = function () {
@@ -81,6 +81,20 @@
             sessionStorage.removeItem('isAdmin');
             $location.path('/');
         };
+
+        self.status = {
+            isopen: false
+        };
+
+        self.toggled = function (open) {
+            $log.log('Dropdown is now: ', open);
+        };
+        self.toggleDropdown = function($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            $scope.status.isopen = !$scope.status.isopen;
+        };
+
     });
 
     //PRODUCTS LIST CONTROLLER
