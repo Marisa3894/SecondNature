@@ -83,7 +83,6 @@
         };
     });
 
-
     //PRODUCTS LIST CONTROLLER
     angular.module('SNApp').controller('ListController', function (PROD_API, $resource, $location) {
         var self = this;
@@ -163,8 +162,5 @@
             $location.path('/list');
         }
     });
-
-    
-
-    
+   
 })();
