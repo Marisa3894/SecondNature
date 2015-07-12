@@ -1,6 +1,6 @@
 ﻿(function () {
 
-    angular.module('SNApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ngAnimate'])
+    angular.module('SNApp', ['ngResource', 'ngRoute', 'ui.bootstrap'])
         .constant('PROD_API', '/api/products/:id')
         .constant('PRODT_API', '/api/productstoo/:id')
         .config(function ($routeProvider, $locationProvider) {

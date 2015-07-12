@@ -1,5 +1,4 @@
-﻿
-body {
+﻿body {
 
     /*background-image: url('../img/Picture2.png');
     background-size: cover;*/
@@ -45,6 +44,15 @@ tbody img {  /*resizes product list table images*/
 
 
 /*<== ID's ==>*/
+
+#mjr-home {
+    height: 500px;
+}
+
+#mjr-list {
+    height: 500px;
+}
+
 #mjr-carousel-img {
     width: 1100px;
     height: 300px;

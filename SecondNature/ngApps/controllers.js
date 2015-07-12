@@ -33,11 +33,11 @@
         self.login = function () {
             var data = "grant_type=password&username=" + self.loginEmail + "&password=" + self.loginPassword;
 
-
             $http.post('/Token', data,
             {
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
             }).success(function (result) {
+                
                 sessionStorage.setItem('userToken', result.access_token);
                 $http.defaults.headers.common['Authorization'] = 'bearer ' + result.access_token;
                 $http.get('/api/account/getisadmin').success(function (isAdmin) {
@@ -54,13 +54,15 @@
     angular.module('SNApp').controller('RegisterController', function ($http, $location) {
         var self = this;
 
+        self.reveal = false;
+
         self.register = function () {
             $http.post('/api/account/register', self.newUser).success(function () {
+                self.reveal = true;
                 $location.path('/');
             });
         };
     });
-
 
     //MENU CONTROLLER FOR NAV BAR
     angular.module('SNApp').controller('MenuController', function ($location, $http) {
@@ -79,7 +81,6 @@
             sessionStorage.removeItem('isAdmin');
             $location.path('/');
         };
-
     });
 
 
@@ -107,7 +108,6 @@
         self.isAdmin = function () {
             return sessionStorage.getItem('isAdmin')
         }
-
     });
 
     //PRODUCT ADD CONTROLLER
