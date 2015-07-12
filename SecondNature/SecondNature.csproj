@@ -163,7 +163,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\ProductsController.cs" />
-    <Compile Include="API\ProductsTooController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -204,27 +203,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506301954412_initial.cs" />
-    <Compile Include="Migrations\201506301954412_initial.Designer.cs">
-      <DependentUpon>201506301954412_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201507072233349_ProductsToo.cs" />
-    <Compile Include="Migrations\201507072233349_ProductsToo.Designer.cs">
-      <DependentUpon>201507072233349_ProductsToo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201507072338333_Date.cs" />
-    <Compile Include="Migrations\201507072338333_Date.Designer.cs">
-      <DependentUpon>201507072338333_Date.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201507080334550_renameDateToIntake.cs" />
-    <Compile Include="Migrations\201507080334550_renameDateToIntake.Designer.cs">
-      <DependentUpon>201507080334550_renameDateToIntake.cs</DependentUpon>
+    <Compile Include="Migrations\201507112147383_initial.cs" />
+    <Compile Include="Migrations\201507112147383_initial.Designer.cs">
+      <DependentUpon>201507112147383_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ProductToo.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -296,12 +282,12 @@
     <Content Include="ngViews\details.html" />
     <Content Include="ngViews\edit.html" />
     <Content Include="ngViews\fabric.html" />
+    <Content Include="ngViews\home.html" />
     <Content Include="ngViews\list.html" />
     <Content Include="ngViews\login.html" />
     <Content Include="ngViews\master.html" />
     <Content Include="ngViews\neckroll.html" />
     <Content Include="ngViews\register.html" />
-    <Content Include="ngViews\test.html" />
     <Content Include="ngViews\zabouton.html" />
     <Content Include="ngViews\zafu.html" />
     <Content Include="Notes.html" />
@@ -418,17 +404,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506301954412_initial.resx">
-      <DependentUpon>201506301954412_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201507072233349_ProductsToo.resx">
-      <DependentUpon>201507072233349_ProductsToo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201507072338333_Date.resx">
-      <DependentUpon>201507072338333_Date.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201507080334550_renameDateToIntake.resx">
-      <DependentUpon>201507080334550_renameDateToIntake.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201507112147383_initial.resx">
+      <DependentUpon>201507112147383_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

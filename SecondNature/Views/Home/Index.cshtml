@@ -19,7 +19,7 @@
     </div>
 
     <!-- Navigation bar -->
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse" ng-controller="MenuController as menu">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
@@ -28,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="~/">Home</a>
+                <a class="navbar-brand" href="~/home">Home</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
@@ -36,12 +36,12 @@
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="~/list">Product List <span class="sr-only">(current)</span></a></li>
-                    <li><a href="~/add">Add Product<span class="sr-only">(current)</span></a></li>
                 </ul>
 
-
                 <!-- Login links -->
-                <ul ng-controller="MenuController as menu" class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li ng-show="menu.isAdmin()"><a href="~/add">Admin<span class="sr-only">(current)</span></a></li>
                     <li ng-if="!menu.showLogin()"><a href="~/register">Register</a></li>
                     <li ng-if="!menu.showLogin()"><a href="~/login">Log in</a></li>
                     <li ng-if="menu.showLogin()"><a ng-click="menu.logout()">Log out</a></li>
@@ -56,8 +56,7 @@
     </div>
 
 
-    <!-- Vertical Spacer -->
-    <div class="mjr-divSpacer"></div>
+
 
 
     

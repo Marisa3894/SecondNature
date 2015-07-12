@@ -21,5 +21,6 @@ namespace SecondNature.Models
 
         public string Description { get; set; }
 
+        public DateTime InventoryDate { get; set; }
     }
 }

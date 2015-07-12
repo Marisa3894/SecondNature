@@ -7,13 +7,13 @@ namespace SecondNature.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class ProductsToo : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ProductsToo));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201507072233349_ProductsToo"; }
+            get { return "201507112147383_initial"; }
         }
         
         string IMigrationMetadata.Source

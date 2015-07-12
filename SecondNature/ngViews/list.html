@@ -32,9 +32,9 @@
             <td>{{product.filling}}</td>
             <td>{{product.price|currency}}</td>
             <td>
-                <a href="/details/{{product.id}}">Details | </a>
-                <a href="/edit/{{product.id}}">Edit | </a>
-                <a href="/delete/{{product.id}}">Delete</a>
+                <a href="/details/{{product.id}}">Details</a>
+                <a href="/edit/{{product.id}}" ng-show="main.isAdmin()"> | Edit</a>
+                <a href="/delete/{{product.id}}" ng-show="main.isAdmin()"> | Delete</a>
             </td>
         </tr>
     </tbody>

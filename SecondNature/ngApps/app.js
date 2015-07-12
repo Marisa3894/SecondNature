@@ -19,6 +19,12 @@
                 controllerAs: 'main'
             })
 
+            .when('/home', {
+                templateUrl: '/ngViews/home.html',
+                controller: 'HomeController',
+                controllerAs: 'hc'
+            })
+
             .when('/zabouton', {
                 templateUrl: '/ngViews/zabouton.html',
                 controller: 'MasterController',
@@ -90,12 +96,6 @@
                 controllerAs: 'rc'
             })
 
-            // test
-            .when('/test', {
-                templateUrl: '/ngViews/test.html',
-                controller: 'TestController',
-                controllerAs: 'tc'
-            })
 
         .otherwise({ redirectTo: '/' });
 

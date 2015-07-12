@@ -28,13 +28,12 @@ namespace SecondNature.Models
     {
         public IDbSet<Product> Products { get; set; }
 
-        public IDbSet<ProductToo> ProductsToo { get; set; }
-
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
+            //Commenting out SW code; creating multiples in Group Project
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
         }
         
         public static ApplicationDbContext Create()
