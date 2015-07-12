@@ -5,7 +5,6 @@
 
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/ui-bootstrap-csp.css" rel="stylesheet" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
     <link href="~/Content/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -19,7 +18,7 @@
     </div>
 
     <!-- Navigation bar -->
-    <nav class="navbar navbar-inverse" ng-controller="MenuController as menu">
+    <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
@@ -28,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="~/home">Home</a>
+                <a class="navbar-brand" href="~/">Home</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
@@ -36,12 +35,33 @@
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="~/list">Product List <span class="sr-only">(current)</span></a></li>
+                    <li><a href="~/add">Add Product<span class="sr-only">(current)</span></a></li>
+
+
+                    @*<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>*@
                 </ul>
 
-                <!-- Login links -->
-                <ul class="nav navbar-nav navbar-right">
+                @*Search function*@
+                @*<form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>*@
 
-                    <li ng-show="menu.isAdmin()"><a href="~/add">Admin<span class="sr-only">(current)</span></a></li>
+                <!-- Login links -->
+                <ul ng-controller="MenuController as menu" class="nav navbar-nav navbar-right">
                     <li ng-if="!menu.showLogin()"><a href="~/register">Register</a></li>
                     <li ng-if="!menu.showLogin()"><a href="~/login">Log in</a></li>
                     <li ng-if="menu.showLogin()"><a ng-click="menu.logout()">Log out</a></li>
@@ -56,12 +76,9 @@
     </div>
 
 
+    <!-- Vertical Spacer -->
+    <div class="mjr-divSpacer"></div>
 
-
-
-    
-
-    
 
     <!-- Footer Section -->
     <footer>
@@ -115,8 +132,8 @@
     </div>
 
 
+
     <script src="~/Scripts/angular.min.js"></script>
-    <script src="~/Scripts/angular-animate.min.js"></script>
     <script src="~/Scripts/angular-route.min.js"></script>
     <script src="~/Scripts/angular-resource.min.js"></script>
     <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>

@@ -18,6 +18,7 @@ namespace SecondNature.Migrations
                         Filling = c.String(),
                         Fabric = c.String(),
                         Description = c.String(),
+                        InventoryDate = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             

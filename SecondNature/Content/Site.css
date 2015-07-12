@@ -1,4 +1,8 @@
-﻿* {
+﻿
+body {
+
+    /*background-image: url('../img/Picture2.png');
+    background-size: cover;*/
     font-family: 'Roboto-condensed', 'Arial Narrow', Arial, sans-serif;
     font-size: 18px;
 }
@@ -102,10 +106,6 @@ tbody img {  /*resizes product list table images*/
     font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif;
 }
 
-.mjr-divSpacer {
-    margin-top: 200px;
-}
-
  
 .panel-title {
     color: white;
@@ -125,15 +125,20 @@ tbody img {  /*resizes product list table images*/
     height: 425px;
 }
 
-body {
-    background-image: url('../img/background.jpg');
-    background-size: cover;
-}
-
 .mjr-loader {
     position: fixed;
     top: 40%;
-    left: 50%;
+    left: 40%;
     width: 50px;
+}
+
+/*Page fade-in, fade-out animation*/
+.view.ng-enter {
+    transition:1s linear all;
+    opacity:0;
+}
+
+.view.ng-enter-active {
+    opacity: 1;
 }
 

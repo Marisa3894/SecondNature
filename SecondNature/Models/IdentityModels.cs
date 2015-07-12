@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using System.Data.Entity;
+using SecondNature.Migrations;
 
 namespace SecondNature.Models
 {
@@ -27,6 +28,8 @@ namespace SecondNature.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            //Commenting out SW code; creating multiples in Group Project
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
         }
         
         public static ApplicationDbContext Create()

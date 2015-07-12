@@ -13,7 +13,7 @@ namespace SecondNature.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201506301954412_initial"; }
+            get { return "201507112147383_initial"; }
         }
         
         string IMigrationMetadata.Source
