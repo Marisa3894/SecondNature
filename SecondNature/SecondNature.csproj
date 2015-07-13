@@ -221,7 +221,7 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\ceruleanStyle.css" />
+    <Content Include="Content\BootswatchTheme.css" />
     <Content Include="Content\font-awesome-4.3.0\css\font-awesome.css" />
     <Content Include="Content\font-awesome-4.3.0\css\font-awesome.min.css" />
     <Content Include="Content\font-awesome-4.3.0\fonts\fontawesome-webfont.svg" />
@@ -267,16 +267,16 @@
     <Content Include="img\Background1.png" />
     <Content Include="img\Background2.png" />
     <Content Include="img\FabricThumb.png" />
-    <Content Include="img\MeditationColor.png" />
     <Content Include="img\NeckrollThumb.png" />
     <Content Include="img\Picture2.png" />
-    <Content Include="img\Quote1.png" />
+    <Content Include="img\SNLogo.png" />
     <Content Include="img\TriangleSpinner.gif" />
     <Content Include="img\SNBanner.png" />
     <Content Include="img\ZabThumb.png" />
     <Content Include="ngApps\app.js" />
     <Content Include="ngApps\controllers.js" />
     <Content Include="ngViews\add.html" />
+    <Content Include="ngViews\modal.html" />
     <Content Include="ngViews\delete.html" />
     <Content Include="ngViews\details.html" />
     <Content Include="ngViews\edit.html" />

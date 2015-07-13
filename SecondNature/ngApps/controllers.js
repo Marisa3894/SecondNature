@@ -1,16 +1,26 @@
 ﻿(function () {
 
     //HOME CONTROLLER
-    angular.module('SNApp').controller('HomeController', function ($resource, $location) {
+    angular.module('SNApp').controller('HomeController', function ($modal, $location, $http) {
         var self = this;
 
         self.isAdmin = function () {
             return sessionStorage.getItem('isAdmin')
         }
+
+        //start the login modal with new LoginController
+        self.loginshowLoginModal = function () {
+            $modal.open({
+                animation: true,
+                templateUrl: '/ngViews/modal.html',
+                controller: 'LoginController',
+                controllerAs: 'lc',
+            })
+        };
     });
 
     //MASTER CONTROLLER
-    angular.module('SNApp').controller('MasterController', function ($resource, $location) {
+    angular.module('SNApp').controller('MasterController', function ($modal, $http, $location) {
         var self = this;
 
         self.isAdmin = function () {
@@ -20,15 +30,28 @@
         self.myInterval = 3000;
         self.slides = [{ image: 'http://placekitten.com/603/300' }, { image: 'http://placekitten.com/602/300' }, { image: 'http://placekitten.com/602/300' }];
 
+        //start login modal with new LoginController
+        self.loginshowLoginModal = function () {
+            $modal.open({
+                animation: true,
+                templateUrl: '/ngViews/modal.html',
+                controller: 'LoginController',
+                controllerAs: 'lc',
+            })
+        };
+
     });
 
     //USER LOGIN CONTROLLER
-    angular.module('SNApp').controller('LoginController', function ($location, $http) {
+    angular.module('SNApp').controller('LoginController', function ($location, $http, $modalInstance) {
         var self = this;
 
-
-        //modal here
-
+        //modal cancel with no action
+        self.template = '/ngViews/login.html'      
+        self.cancel = function () {
+            $modalInstance.close('close');
+        };
+        //end modal
 
         self.login = function () {
             var data = "grant_type=password&username=" + self.loginEmail + "&password=" + self.loginPassword;
@@ -46,6 +69,9 @@
                     }
                 })
                 $location.path('/');
+            })
+                    .then(function () {
+                        $modalInstance.dismiss('cancel')
             });
         }
     });
@@ -81,28 +107,11 @@
             sessionStorage.removeItem('isAdmin');
             $location.path('/');
         };
-
-        self.status = {
-            isopen: false
-        };
-
-        self.toggled = function (open) {
-            $log.log('Dropdown is now: ', open);
-        };
-        self.toggleDropdown = function($event) {
-            $event.preventDefault();
-            $event.stopPropagation();
-            $scope.status.isopen = !$scope.status.isopen;
-        };
-
     });
 
     //PRODUCTS LIST CONTROLLER
     angular.module('SNApp').controller('ListController', function (PROD_API, $resource, $location) {
         var self = this;
-
-        var Product = $resource(PROD_API);
-        self.products = Product.query();
 
         self.reveal = false;
 
@@ -121,6 +130,7 @@
         self.isAdmin = function () {
             return sessionStorage.getItem('isAdmin')
         }
+
     });
 
     //PRODUCT ADD CONTROLLER
@@ -175,6 +185,8 @@
         self.redirect = function () {
             $location.path('/list');
         }
+
+
     });
-   
+
 })();

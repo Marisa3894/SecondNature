@@ -45,17 +45,22 @@ tbody img {  /*resizes product list table images*/
 
 /*<== ID's ==>*/
 
-#mjr-home {
-    height: 500px;
+#mjr-adminBtn {
+    border: none;
+    padding-top: 12px;
 }
 
-#mjr-list {
+/*#mjr-home {
     height: 500px;
-}
+}*/
 
 #mjr-carousel-img {
     width: 1100px;
     height: 300px;
+}
+
+#mjr-modal{
+    position: relative;
 }
 
 
@@ -138,6 +143,11 @@ tbody img {  /*resizes product list table images*/
     top: 40%;
     left: 40%;
     width: 50px;
+}
+
+.modal-header img {
+    padding-left: 75px;
+    width: 450px;
 }
 
 /*Page fade-in, fade-out animation*/

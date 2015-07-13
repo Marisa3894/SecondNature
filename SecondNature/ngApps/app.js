@@ -1,8 +1,7 @@
 ﻿(function () {
 
     angular.module('SNApp', ['ngResource', 'ngRoute', 'ui.bootstrap'])
-        .constant('PROD_API', '/api/products/:id')
-        .constant('PRODT_API', '/api/productstoo/:id')
+        .constant('PROD_API', '/api/products')
         .config(function ($routeProvider, $locationProvider) {
 
         $routeProvider
@@ -87,7 +86,7 @@
             .when('/login', {
                 templateUrl: '/ngViews/login.html',
                 controller: 'LoginController',
-                controllerAs: 'main'
+                controllerAs: 'lc'
             })
 
             .when('/register', {
