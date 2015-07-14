@@ -8,7 +8,7 @@
             return sessionStorage.getItem('isAdmin')
         }
 
-        //start the login modal with new LoginController
+        //LoginController for login modal
         self.loginshowLoginModal = function () {
             $modal.open({
                 animation: true,
@@ -30,7 +30,7 @@
         self.myInterval = 3000;
         self.slides = [{ image: 'http://placekitten.com/603/300' }, { image: 'http://placekitten.com/602/300' }, { image: 'http://placekitten.com/602/300' }];
 
-        //start login modal with new LoginController
+        //LoginController for login modal
         self.loginshowLoginModal = function () {
             $modal.open({
                 animation: true,
@@ -46,12 +46,12 @@
     angular.module('SNApp').controller('LoginController', function ($location, $http, $modalInstance) {
         var self = this;
 
-        //modal cancel with no action
-        self.template = '/ngViews/login.html'      
+        //cancel modal
+        self.template = '/ngViews/login.html'
         self.cancel = function () {
             $modalInstance.close('close');
         };
-        //end modal
+        //end cancel modal
 
         self.login = function () {
             var data = "grant_type=password&username=" + self.loginEmail + "&password=" + self.loginPassword;
@@ -60,7 +60,7 @@
             {
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
             }).success(function (result) {
-                
+
                 sessionStorage.setItem('userToken', result.access_token);
                 $http.defaults.headers.common['Authorization'] = 'bearer ' + result.access_token;
                 $http.get('/api/account/getisadmin').success(function (isAdmin) {
@@ -72,7 +72,7 @@
             })
                     .then(function () {
                         $modalInstance.dismiss('cancel')
-            });
+                    });
         }
     });
 

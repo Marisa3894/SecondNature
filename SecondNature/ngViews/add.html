@@ -5,27 +5,45 @@
             <form ng-submit="main.add()" class="form-horizontal">
                 <fieldset>
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">Image Url:</label>
-                        <div class="col-lg-10">
-                            <input ng-model="main.newProduct.image" type="text" class="form-control" />
+                        <label class="col-sm-3 control-label">Inventory Date:</label>
+                        <div class="col-sm-9">
+                            <input ng-model="main.newProduct.inventoryDate" type="date" class="form-control" />
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Image Url:</label>
+                            <div class="col-sm-9">
+                                <input ng-model="main.newProduct.image" type="text" class="form-control" />
+                            </div>
+                        </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Name:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" id="select" ng-model="main.product.name">
+                                <option>{{main.product.name}}</option>
+                                <option>Zafu</option>
+                                <option>Zabouton</option>
+                                <option>Mini-Zab</option>
+                                <option>Neck Roll</option>
+                                <option>Neck Pillow</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">Name:</label>
-                        <div class="col-lg-10">
-                            <input ng-model="main.newProduct.name" class="form-control" />
+                        <label class="col-sm-3 control-label">Fabric:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" id="select" ng-model="main.product.fabric">
+                                <option>{{main.product.fabric}}</option>
+                                <option>print</option>
+                                <option>solid</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">Fabric:</label>
-                        <div class="col-lg-10">
-                            <input ng-model="main.newProduct.fabric" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label">Filling</label>
-                        <div class="col-lg-10">
-                            <select class="form-control" id="select">
+                        <label class="col-sm-3 control-label">Filling</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" id="select" ng-model="main.product.filling">
+                                <option>{{main.product.filling}}</option>
                                 <option>buckwheat hulls</option>
                                 <option>cotton batting</option>
                                 <option>kapok</option>
@@ -33,20 +51,20 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="editPrice" class="col-lg-2 control-label">Price:</label>
-                        <div class="col-lg-10">
+                        <label for="editPrice" class="col-sm-3 control-label">Price:</label>
+                        <div class="col-sm-9">
                             <input ng-model="main.newProduct.price" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="description" class="col-lg-2 control-label">Description</label>
-                        <div class="col-lg-10">
+                        <label for="description" class="col-sm-3 control-label">Description</label>
+                        <div class="col-sm-9">
                             <textarea ng-model="main.newProduct.description" class="form-control" rows="6"></textarea>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <div class="col-lg-10 col-lg-offset-2">
+                        <div class="col-sm-offset-3 col-sm-9">
                             <a href="/list" class="btn btn-primary">Cancel</a>
                             <input type="submit" class="btn btn-info" value="Save" />
                         </div>
